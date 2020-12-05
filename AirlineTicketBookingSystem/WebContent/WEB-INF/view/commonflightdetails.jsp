@@ -61,8 +61,8 @@ td {
 	<td><c:out value="${selectedFlight.airportname}"/></td>
 </tr>
 <tr>
-	<th>Amount:</th>
-	<td><c:out value="${selectedFlight.amount}"/></td>	
+	<th>Amount per Person:</th>
+	<td><span id="amount"><c:out value="${selectedFlight.amount}" /></span></td>	
 </tr>
 </table>
 </body>

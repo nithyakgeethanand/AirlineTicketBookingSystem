@@ -38,5 +38,25 @@ public class BookFlightModel {
 		session.save(obj);
 		t.commit();
 	}
+	
+	public void updateAdditionalPassengers(BookFlight obj) {
+		  SessionFactory factory=new Configuration() 
+		  							.configure("hibernate.cfg.xml")
+		  							.addAnnotatedClass(BookFlight.class) 
+		  							.buildSessionFactory();
+		  Session session=factory.openSession(); 
+		  Transaction t=session.beginTransaction();
+		  Query<BookFlight> q=session.createQuery("update BookFlight set noofpassenger=:noofpassenger, additional1=:additional1, additional2=:additional2, additional3=:additional3, additional4=:additional4, totalamount=:totalamount where username=:username");
+		  q.setParameter("noofpassenger", obj.getNoofpassenger());
+		  q.setParameter("additional1",obj.getAdditional1());
+		  q.setParameter("additional2",obj.getAdditional2());
+		  q.setParameter("additional3",obj.getAdditional3());
+		  q.setParameter("additional4",obj.getAdditional4());
+		  q.setParameter("totalamount",obj.getTotalamount());
+		  q.setParameter("username",obj.getUsername());
+		  q.executeUpdate();
+		  t.commit(); 
+		  session.close();
+	  }
 
 }

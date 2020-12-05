@@ -51,16 +51,41 @@ th {
 <table style="width:80%">
   <tr>
     <th>Source:</th>
-    <td><f:input path="f_source" value="Trivandrum" required="required" /></td>
+    <td><f:select style="width:200px; height:35px;" path="f_source" required="required" >
+    	<option>--select--</option>
+    	<option>Trivandrum</option>
+    	<option>Chennai</option>
+    	<option>Bangalore</option>
+    	<option>Goa</option>
+    	<option>Kolkata</option>
+    	<option>Hyderabad</option>
+    	<option>Chandigarh</option>
+    	<option>Kochi</option>
+    	<option>Jammu</option>
+    	<option>Mangalore</option>
+    </f:select></td>
     </tr>
   <tr>
     <th>Destination:</th>
-    <td><f:input path="f_destination" value="Mumbai" required="required"/></td>
+    <td><f:select style="width:200px; height:35px;" path="f_destination" required="required">
+    	<option>--select--</option>
+    	<option>Mumbai</option>
+    	<option>Pune</option>
+    	<option>Delhi</option>
+    	<option>Trivandrum</option>
+    	<option>Chennai</option>
+    	<option>Bangalore</option>
+    	<option>Goa</option>
+    	<option>Kolkata</option>
+    	<option>Hyderabad</option>
+    	<option>Chandigarh</option>
+    	<option>Kochi</option>
+    </f:select></td>
     
   </tr>
   <tr>
-    <th>Date (mm/dd/yyyy):</th>
-    <td><f:input path="date" id="datepicker" required="required"/></td>
+    <th>Date:</th>
+    <td><f:input style="width:200px; height:35px;" value="mm/dd/yyyy" path="date" id="datepicker" required="required"/></td>
     
   </tr>
 </table>

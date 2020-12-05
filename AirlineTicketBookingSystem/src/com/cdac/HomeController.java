@@ -72,6 +72,8 @@ public class HomeController {
 						li.setUsername(uname);
 						List<Login> selectedUser = lm.selectedUserInfo(li);
 						model.addAttribute("user", selectedUser.get(0));
+						model.addAttribute("passengersattribute", new BookFlight());
+					
 				}				
 				return "bookdetails";
 			}
@@ -125,7 +127,11 @@ public class HomeController {
 	}
 
 	@RequestMapping("payment")
-	public String paymentform(Model pm) {
+	public String paymentform(@ModelAttribute("passengersattribute") BookFlight obj,
+			Model pm) {
+		if(obj.noofpassenger > 0) {
+			bfm.updateAdditionalPassengers(obj);
+		}
 		pm.addAttribute("paymentattribute", new Payment());
 		return "payment";
 
@@ -155,6 +161,8 @@ public class HomeController {
 				li.setUsername(uname);
 				List<Login> selectedUser = lm.selectedUserInfo(li);
 				model.addAttribute("user", selectedUser.get(0));
+				List<BookFlight> additionalpassengers = bfm.getBookingDetails(bf);
+				model.addAttribute("additionalinfo", additionalpassengers.get(0));
 		}				
 		return "paymentsuccess";
 	}
