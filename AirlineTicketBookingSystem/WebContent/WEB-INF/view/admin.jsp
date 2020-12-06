@@ -47,15 +47,15 @@ td {
         <td><a:out value="${flight.f_time}"/></td>
         <td><a:out value="${flight.airportname}"/></td>
         <td><a:out value="${flight.amount}"/></td>
-        <td><a href="/AirlineTicketBookingSystem/flightdelete?flight=${flight.f_no}&&bookdate=${flight.date}" >Delete</a></td>
-        <td><a href="/AirlineTicketBookingSystem/flightupdate?flight=${flight.f_no}&&bookdate=${flight.date}" >Update</a></td>
+        <td><a href="/AirlineTicketBookingSystem/flightdelete?flight=${flight.f_no}&&bookdate=${flight.date}" style="border: 1px; background: black; padding: 5px 10px; border-radius: 4px;">Delete</a></td>
+        <td><a href="/AirlineTicketBookingSystem/flightupdate?flight=${flight.f_no}&&bookdate=${flight.date}" style="border: 1px; background: black; padding: 5px 10px; border-radius: 4px;">Update</a></td>
         <td><a href="/AirlineTicketBookingSystem/flightchart?flight=${flight.f_no}&&bookdate=${flight.date}" >Chart</a></td>
       
     </tr>
 </a:forEach>
 
 </table>
-<CENTER><a href="#" onclick="myFunctionAdd()">Add</a></CENTER>
+<CENTER><a href="#" onclick="myFunctionAdd()" style="border: 1px; background: black; padding: 5px 10px; border-radius: 4px;">Add</a></CENTER>
 
 	<script>
 	function myFunctionAdd(){

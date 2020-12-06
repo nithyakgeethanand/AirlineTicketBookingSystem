@@ -42,6 +42,7 @@ th {
 <body>
 <%@ include file="header.jsp" %>
 
+
 <h1>Welcome To Airline Reservation</h1>
 <%-- <img src="/resources/images/header.jpg" alt="flight" style="width:400px;height:400px">
 <img src='<c:url value="/images/header.jpg"></c:url>' />  --%>

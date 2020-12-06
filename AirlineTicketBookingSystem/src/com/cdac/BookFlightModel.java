@@ -15,7 +15,6 @@ public class BookFlightModel {
 	               .addAnnotatedClass(BookFlight.class)
 	               .buildSessionFactory();
 		Session session=factory.getCurrentSession();
-		
 		Transaction t=session.beginTransaction();
 		Query<BookFlight> q=session.createQuery("from BookFlight where fnumber=:fnumber and date=:date and username=:username");
 		q.setParameter("fnumber", obj.fnumber);
@@ -47,6 +46,7 @@ public class BookFlightModel {
 		  Session session=factory.openSession(); 
 		  Transaction t=session.beginTransaction();
 		  Query<BookFlight> q=session.createQuery("update BookFlight set noofpassenger=:noofpassenger, additional1=:additional1, additional2=:additional2, additional3=:additional3, additional4=:additional4, totalamount=:totalamount where username=:username");
+		  System.out.println("update queryyyy"+obj.noofpassenger +obj.additional1 +obj.totalamount +obj.username );
 		  q.setParameter("noofpassenger", obj.getNoofpassenger());
 		  q.setParameter("additional1",obj.getAdditional1());
 		  q.setParameter("additional2",obj.getAdditional2());

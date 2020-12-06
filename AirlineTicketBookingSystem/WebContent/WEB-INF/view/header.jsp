@@ -8,7 +8,12 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 <style>
 body {
-	/* background-image: url("header.jpg"); */
+	position:relative; 
+    margin:0;
+    padding:0;
+    overflow:auto; 
+ 	color: white;
+	background-image: url("/AirlineTicketBookingSystem/resources/images/flight_image.jpg");  
  /* background-color: #657ae0; */
  }
 table { 
@@ -28,19 +33,32 @@ div {
 
 nav {
 	height: 40px; 
-    background: #d1d1e0; 	   
+    background: black;
+    color: white; 	   
 }
 nav td {
 		padding-left: 10px; 
 	    padding-top: 7px;
-}  
+	    color: white;
+}
+a:link {
+  color: white;
+  background-color: transparent;
+  
+}
+
+a:visited {
+  color: white;
+  background-color: transparent;
+ 
+} 
 nav th {
 	   	right: 10px;
 	   	position: absolute;
 	   }
 
 img {
-	height: 100px;
+	height: 100%;
 	width: 100%;
 }
 </style>
@@ -59,6 +77,7 @@ img {
     </tr>  
 </table>
 </nav>
+<!-- <img src="/AirlineTicketBookingSystem/resources/images/header.jpg" > -->
 
 <%-- <a href="${pageContext.request.contextPath}/header"><img class="logo" src="${pageContext.request.contextPath}/resources/images/header.png" ></a> --%>
 <%-- <img src="${pageContext.request.contextPath}/resources/images/header.jpg" / > --%>

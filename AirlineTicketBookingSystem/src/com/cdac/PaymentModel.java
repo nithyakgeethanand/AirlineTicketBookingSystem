@@ -12,7 +12,7 @@ public class PaymentModel {
 	public List<Payment> getPayment(Payment obj) {
 		SessionFactory factory=new Configuration()
 	               .configure("hibernate.cfg.xml")
-	               .addAnnotatedClass(FlightInfo.class)
+	               .addAnnotatedClass(Payment.class)
 	               .buildSessionFactory();
 		Session session=factory.getCurrentSession();
 		Transaction t=session.beginTransaction();

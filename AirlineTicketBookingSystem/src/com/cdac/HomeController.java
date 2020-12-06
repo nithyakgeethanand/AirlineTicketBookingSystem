@@ -128,8 +128,12 @@ public class HomeController {
 
 	@RequestMapping("payment")
 	public String paymentform(@ModelAttribute("passengersattribute") BookFlight obj,
-			Model pm) {
-		if(obj.noofpassenger > 0) {
+			Model pm, ModelMap model) {
+		if(obj.noofpassenger >= 0) {
+			
+			String uname = model.getAttribute("name").toString();
+			obj.setUsername(uname);
+			System.out.println("Totall Amount " +obj.totalamount);
 			bfm.updateAdditionalPassengers(obj);
 		}
 		pm.addAttribute("paymentattribute", new Payment());
@@ -151,7 +155,7 @@ public class HomeController {
 
 				bf.setDate(fdate);
 				bf.setUsername(uname);
-				bfm.bookingValues(bf);
+			/* bfm.bookingValues(bf); */
 				FlightInfo fi = new FlightInfo();
 				fi.setF_no(fno);
 				fi.setDate(fdate);

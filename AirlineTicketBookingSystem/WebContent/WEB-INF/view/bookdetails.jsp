@@ -27,12 +27,19 @@ span {
 	<table style="width:80%">
   <tr>
     <th>Number of Additional Passengers:</th>
-    <td><ff:input path="noofpassenger" /></td>
+    <td><ff:select path="noofpassenger" >
+    	<option>0</option>
+    	<option>1</option>
+    	<option>2</option>
+    	<option>3</option>
+    	<option>4</option>
+    </ff:select>
+    </td>
   
     </tr>
   <tr>
     <th>Additional Passenger 1:</th>
-    <td><ff:input path="additional1" /></td>  
+    <td><ff:input path="additional1" onchange="calculateTotal()" /></td>  
   </tr>
   <tr>
     <th>Additional Passenger 2:</th>
@@ -48,7 +55,7 @@ span {
   </tr>
   <tr>
     <th>Total Amount:</th>
-    <td><span id="totalamount" ><ff:input path="totalamount" /></span></td>  
+    <td><span id="tamount" ><ff:input path="totalamount" value="${selectedFlight.amount}"/></span></td>  
   </tr>
   <tr>
   <td></td>
@@ -60,15 +67,21 @@ span {
 </ff:form>
 
 <script>
-
+	function getAmount() {
+		var amount = document.getElementById('amount').textContent; 
+		var totalamount = document.getElementById('totalamount'); 
+		totalamount.innerHTML = amount;
+	    totalamount.value = amount;
+	}
+	
 	function calculateTotal(){
 		var amount = document.getElementById('amount').textContent; 
 	    var noofpassenger = document.getElementById('noofpassenger').value;
 	    var totalamount = document.getElementById('totalamount'); 
-	    var total = (parseInt(amount) * parseInt(noofpassenger));
-	    console.log(parseInt(amount),parseInt(noofpassenger),total);
-	    
-	    totalamount.innerHTML = total;
+	    var total = (parseFloat(amount) * parseFloat(noofpassenger)) + parseFloat(amount);
+	    var floattotal = total.toFixed(2);
+	    totalamount.innerHTML = floattotal;
+	    totalamount.value = floattotal;
 	}
 	
 </script>

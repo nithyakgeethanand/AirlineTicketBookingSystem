@@ -25,7 +25,7 @@ span {
 <%@ include file="commonflightdetails.jsp" %>
 <table>
 <tr>
-	<th>Number of Passengers:</th>
+	<th>Number of Additional Passengers:</th>
 	<td><c:out value="${additionalinfo.noofpassenger}" /></td>	
 </tr>
 <tr>

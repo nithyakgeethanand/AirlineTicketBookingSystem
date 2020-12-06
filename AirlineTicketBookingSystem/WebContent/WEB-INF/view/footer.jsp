@@ -3,14 +3,21 @@
 <!DOCTYPE html>
 <html>
 <style>
+
 p {
-			position: absolute;
-            padding: 10px 10px 0px 10px; 
-            bottom: 0; 
-            width: 100%; 
-            /* Height of the footer*/  
-            height: 40px; 
-          background: #d1d1e0;  
+	position: relative; 
+    width: 100%;
+    bottom: 0;
+    background: transparent;
+    font-size: 12px; 
+    padding: 10px 10px 0px 10px;
+    height: 40px;
+    
+}
+svg {
+	height: 350px;
+	width: 100%;
+	position: relative;
 }
 
 
@@ -21,7 +28,7 @@ p {
 </head>
 <body>
 <footer>
-	
+	<svg></svg>
   <p>© Copyright 2020, All Rights Reserved to Airline ticket booking system. contact us at  airlinereservation@ar.com</p>
 </footer>
 </body>
