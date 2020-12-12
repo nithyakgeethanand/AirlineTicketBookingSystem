@@ -19,44 +19,56 @@ td {
 <%@ include file="title.jsp" %>
 <%@ include file="header.jsp" %>
 <meta charset="ISO-8859-1">
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Datepicker - Default functionality</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
 </head>
 <body>
-
-<h1>Update Flight Details</h1>  
+<CENTER>
+<<h1 style="color: white; padding-bottom: 20px; padding-top: 20px;">Update Flight Details</h1>  
 <r:form action="admin" modelAttribute="adminupdateattribute">
 	
-	<table style="width:80%">
+	<table style="width:80%; border: 2px solid grey; z-index: 2;">
   	<tr>
-    	<td>Flight Number:</td>
+    	<th>Flight Number:</th>
     	<td><a:out value="${selectflight.f_no}"/></td>
     </tr>
   	<tr>
-    	<td>Flight Name:</td>
+    	<th>Flight Name:</th>
     	<td><a:out value="${selectflight.f_name}" /></td>
     </tr>
     <tr>
-    	<td>Flight Source:</td>
+    	<th>Flight Source:</th>
     	<td><a:out value="${selectflight.f_source}" /></td>
     </tr>
     <tr>
-    	<td>Flight Destination:</td>
+    	<th>Flight Destination:</th>
     	<td><a:out value="${selectflight.f_destination}" /></td>
     </tr>
     <tr>
-    	<td>Date:</td>
-    	<td><r:input path="date" value="${selectflight.date}"/></td>
+    	<th>Date:</th>
+    	<td><r:input path="date" value="${selectflight.date}" id="datepicker"/></td>
     </tr>
     
     <tr>
-    	<td>Flight Time:</td>
+    	<th>Flight Time:</th>
     	<td><r:input path="f_time" value="${selectflight.f_time}" /></td>																						
     </tr>	
     <tr>
-    	<td>Airport Name:</td>
+    	<th>Airport Name:</th>
     	<td><a:out value="${selectflight.airportname}" /></td>																						
     </tr>	
     <tr>
-    	<td>Amount:</td>
+    	<th>Amount:</th>
     	<td><r:input path="amount" value="${selectflight.amount}"/></td>																						
     </tr>																																																									
   	<tr>
@@ -65,6 +77,7 @@ td {
   	</tr>
   	</table> 
   </r:form>
+  </CENTER>
 <%@ include file="footer.jsp" %>
 
 </body>

@@ -19,10 +19,10 @@ th {
 </head>
 <body>
 <%@ include file="header.jsp" %>
-<h1>Registration Form</h1>  
+<CENTER><h1 style="color: white; padding-bottom: 20px; padding-top: 20px;">Registration Form</h1></CENTER> 
 <r:form action="registrationsuccess" modelAttribute="loginattribute">
 	
-	<table style="width:80%">
+	<CENTER><table style="width:50%; border: 2px solid grey; z-index: 2;">
   	<tr>
     	<th>First Name:</th>
     	<td><r:input path="firstname" required="required"/></td>
@@ -54,9 +54,9 @@ th {
     </tr>																																																
   	<tr>
   		<th></th>
-  		<td><input type="submit" value="Payment & Book"></td>
+  		<td><input type="submit" value="Register"></td>
   	</tr>
-  	</table> 
+  	</table> </CENTER>
   </r:form>
 <%@ include file="footer.jsp" %>
 </body>

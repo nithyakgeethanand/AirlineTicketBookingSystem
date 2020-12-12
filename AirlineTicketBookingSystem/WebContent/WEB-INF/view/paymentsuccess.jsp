@@ -5,10 +5,17 @@
 <html>
 
 <style>
-span {
-	font-weight: 700;
-	font-size: 24px;
-	padding-right: 25px;
+table {
+  
+  border-collapse: collapse;
+}
+td {
+	padding-top: 10px; 
+	padding-bottom: 10px; 
+	/* padding-left: 20px; */ 
+}
+th {
+	padding-left: 20px;
 }
 </style>
 <head>
@@ -18,14 +25,15 @@ span {
 </head>
 <body>
 <%@ include file="header.jsp" %>
-<span>Payment Success !!!!!</span>
+<CENTER><h3 style="color: white; padding-bottom: 20px; padding-top: 20px; margin-bottom: 20px;">Payment Success !!!!!</h3>
 
-	<a href="javascript:window.print()">Print this page</a>
+	
+
 
 <%@ include file="commonflightdetails.jsp" %>
-<table>
+<table style="width:90%; border: 0 2px 2px 2px solid grey; z-index: 2;">
 <tr>
-	<th>Number of Additional Passengers:</th>
+	<th>No of Additional Persons:</th>
 	<td><c:out value="${additionalinfo.noofpassenger}" /></td>	
 </tr>
 <tr>
@@ -46,11 +54,15 @@ span {
 </tr>
 <tr>
 	<th>Total Amount:</th>
-	<td><c:out value="${additionalinfo.totalamount}" /></td>	
+	<td><span style="font-weight: 700; font-size: 24px;"><c:out value="${additionalinfo.totalamount}" /></span></td>	
 </tr>
-
-
+<tr> 
+<th></th>
+<td><a href="javascript:window.print()" style="border: 1px; background: #3399ff; padding: 5px 10px; border-radius: 4px; margin-bottom: 20px; ">Print this page</a>
+</td>
+</tr>
 </table>
+</CENTER>
 
 
 <%@ include file="footer.jsp" %>

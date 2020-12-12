@@ -4,13 +4,16 @@
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <html>
 <style>
+table{
+	border-collapse: collapse;
+}
 th {
 	padding-left: 10px;
 	text-align: left;
 }
 td {
 	padding-top: 10px;
-	padding-left: 50px;
+	/* padding-left: 50px; */
 }
 </style>
 <head>
@@ -18,7 +21,7 @@ td {
 
 </head>
 <body>
-<table>
+<CENTER><table style="width:90%; border: 2px 2px 0 2px solid grey; z-index: 2;">
 <tr>
 	<th>First Name:</th>
 	<td><c:out value="${user.firstname}"/></td>
@@ -64,6 +67,6 @@ td {
 	<th>Amount per Person:</th>
 	<td><span id="amount"><c:out value="${selectedFlight.amount}" /></span></td>	
 </tr>
-</table>
+</table></CENTER>
 </body>
 </html>

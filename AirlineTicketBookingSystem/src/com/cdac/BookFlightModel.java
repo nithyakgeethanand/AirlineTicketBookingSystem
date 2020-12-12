@@ -20,8 +20,20 @@ public class BookFlightModel {
 		q.setParameter("fnumber", obj.fnumber);
 		q.setParameter("date",obj.date);
 		q.setParameter("username", obj.username);
-		/* q.setParameter("seatnumber", obj.seatnumber); */
-		
+		List<BookFlight> resultList = q.list();
+        return resultList;
+	}
+	
+	public List<BookFlight> getAllBookingDetails(BookFlight obj) {
+		SessionFactory factory=new Configuration()
+	               .configure("hibernate.cfg.xml")
+	               .addAnnotatedClass(BookFlight.class)
+	               .buildSessionFactory();
+		Session session=factory.getCurrentSession();
+		Transaction t=session.beginTransaction();
+		Query<BookFlight> q=session.createQuery("from BookFlight where fnumber=:fnumber and date=:date");
+		q.setParameter("fnumber", obj.fnumber);
+		q.setParameter("date",obj.date);		
 		List<BookFlight> resultList = q.list();
         return resultList;
 	}
@@ -58,5 +70,21 @@ public class BookFlightModel {
 		  t.commit(); 
 		  session.close();
 	  }
+	
+	public void updateSeatNumber(BookFlight obj) {
+		  SessionFactory factory=new Configuration() 
+		  							.configure("hibernate.cfg.xml")
+		  							.addAnnotatedClass(BookFlight.class) 
+		  							.buildSessionFactory();
+		  Session session=factory.openSession(); 
+		  Transaction t=session.beginTransaction();
+		  Query<BookFlight> q=session.createQuery("update BookFlight set seatnumber=:seatnumber where username=:username");
+		  q.setParameter("seatnumber",obj.getSeatnumber());
+		  q.setParameter("username",obj.getUsername());
+		  q.executeUpdate();
+		  t.commit(); 
+		  session.close();
+	  }
+
 
 }

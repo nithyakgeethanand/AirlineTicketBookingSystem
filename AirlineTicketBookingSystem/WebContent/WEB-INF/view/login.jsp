@@ -9,9 +9,8 @@
 <meta charset="ISO-8859-1">
 
 <style>
-table {
-  
-  border-collapse: collapse;
+table {  
+ 	border-collapse: collapse;
 }
 td {
 	padding-top: 10px;
@@ -21,48 +20,50 @@ td {
 th {
 	padding-left: 20px;
 }
-
 span {
-  margin: 0;
-  position: absolute;
-  top: 65%;
-  left: 16%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+	margin: 0;
+	position: absolute;
+	top: 65%;
+	left: 16%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
 }
 </style>
 
 </head>
 <body>
-<h3>Login Form</h3>
-<ff:form action="logindetails" modelAttribute="loginattribute">
-	
-	<table style="width:80%">
-  <tr>
-    <th>Username:</th>
-    <td><ff:input path="username" required="required" /></td>
-    </tr>
-  <tr>
-    <th>Password:</th>
-    <td><ff:password path="password" required="required" /></td>  
-  </tr>
-  <tr>
-  <td></td>
-  <td><input type="submit" value="Login"></td>
-  </tr>
-  <tr>
-  <td>New USER??</td>
-  <td><a href="#" onclick="myFunction()">Sign Up</a>
-  </td>
-  </tr>
-</table>
+<CENTER>
+	<h3 style="color: white; padding-bottom: 20px; padding-top: 20px;">Login Form</h3>
+</CENTER>
+
+<ff:form action="logindetails" modelAttribute="loginattribute">	
+
+	<CENTER>
+		<table style="width:50%; border: 2px solid grey; z-index: 2;">
+	  		<tr>
+			    <th>Username:</th>
+			    <td><ff:input path="username" required="required" /></td>
+		    </tr>
+		    <tr>
+		    	<th>Password:</th>
+		    	<td><ff:password path="password" required="required" /></td>  
+		  	</tr>
+			 <tr>
+			  	<td></td>
+			 	<td><input type="submit" value="Login"></td>
+			 </tr>
+			 <tr>
+			  	<td>New USER??</td>
+			  	<td><a href="#" onclick="register()" style="border: 1px; background: #3399ff; padding: 5px 10px; border-radius: 4px;">Sign Up</a>
+			  	</td>
+			 </tr>
+		</table>
+</CENTER>
 <script>
-	function myFunction(){
+	function register(){
 		window.location.href = ("register");
 	}
-</script>
-
-		
+</script>	
 </ff:form>
 <%@ include file="footer.jsp" %>
 </body>

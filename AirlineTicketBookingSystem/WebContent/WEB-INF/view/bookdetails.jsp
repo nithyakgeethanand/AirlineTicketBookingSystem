@@ -5,9 +5,18 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="ff" %>
 <html>
 <style>
+table{
+	border-collapse: collapse;
+}
+th {
+	padding-left: 10px;
+	text-align: left;
+}
+td {
+	padding-top: 10px;
+}
 span {
 	font-weight: 700;
-	padding-left: 10px;
 	padding-right: 20px;
 	padding-bottom: 20px;
 }
@@ -19,14 +28,17 @@ span {
 
 </head>
 <body>
-<h4 align="right">Welcome <a href="direction?id=${sessionScope.name}" >${sessionScope.name}</a></h4>
-<h3>Here is the Booking Details</h3>
-<%@ include file="commonflightdetails.jsp" %>
+<h4 align="right" style="color: white;">Welcome <a href="direction?id=${sessionScope.name}" >${sessionScope.name}</a></h4>
+<CENTER>
+	<h3 style="color: white; padding-bottom: 20px; padding-top: 20px;">Here is the Booking Details</h3>
+	
+	<%@ include file="commonflightdetails.jsp" %>
+
 <ff:form action="payment" modelAttribute="passengersattribute">
 	
-	<table style="width:80%">
+	<table style="width:90%; border: 0 2px 2px 2px solid grey; z-index: 2;">
   <tr>
-    <th>Number of Additional Passengers:</th>
+    <th>No of Additional Persons:</th>
     <td><ff:select path="noofpassenger" >
     	<option>0</option>
     	<option>1</option>
@@ -59,20 +71,21 @@ span {
   </tr>
   <tr>
   <td></td>
-  <td><input type="submit" value="Pay Now"></td>
+  <td><input type="submit" value="Pay Now" style="margin-bottom: 20px;"></td>
   </tr>
   
-</table>
+</table></CENTER>
 		
 </ff:form>
 
 <script>
-	function getAmount() {
+
+/* 	function getAmount() {
 		var amount = document.getElementById('amount').textContent; 
 		var totalamount = document.getElementById('totalamount'); 
 		totalamount.innerHTML = amount;
 	    totalamount.value = amount;
-	}
+	} */
 	
 	function calculateTotal(){
 		var amount = document.getElementById('amount').textContent; 

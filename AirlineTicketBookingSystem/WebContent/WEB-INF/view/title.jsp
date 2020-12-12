@@ -7,6 +7,5 @@
 <title>Airline Ticket Booking System</title>
 </head>
 <body>
-
 </body>
 </html>

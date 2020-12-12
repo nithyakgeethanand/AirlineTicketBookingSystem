@@ -3,6 +3,16 @@
 <!DOCTYPE html>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="r" %>
 <html>
+<style>
+th {
+	padding-left: 10px;
+}
+td {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 20px;
+}
+</style>
 <head>
 <%@ include file="title.jsp" %>
 <%@ include file="header.jsp" %>
@@ -21,41 +31,42 @@
 <meta charset="ISO-8859-1">
 </head>
 <body>
-<h1>Add Flights Form</h1>  
+<CENTER>
+<h1 style="color: white; padding-bottom: 20px; padding-top: 20px;">Add Flights Form</h1>  
 <r:form action="admin" modelAttribute="adminaddattribute">
 	
-	<table style="width:80%">
+	<table style="width:80%; border: 2px solid grey; z-index: 2;">
   	<tr>
-    	<td>Flight Number:</td>
+    	<th>Flight Number:</th>
     	<td><r:input path="f_no" /></td>
     </tr>
   	<tr>
-    	<td>Flight Name:</td>
+    	<th>Flight Name:</th>
     	<td><r:input path="f_name" /></td>
     </tr>
     <tr>
-    	<td>Flight Source:</td>
+    	<th>Flight Source:</th>
     	<td><r:input path="f_source" /></td>
     </tr>
     <tr>
-    	<td>Flight Destination:</td>
+    	<th>Flight Destination:</th>
     	<td><r:input path="f_destination" /></td>
     </tr>
     <tr>
-    	<td>Date:</td>
+    	<th>Date:</th>
     	<td><r:input path="date" id="datepicker"  /></td>
     </tr>
     
     <tr>
-    	<td>Flight Time:</td>
+    	<th>Flight Time:</th>
     	<td><r:input path="f_time"  /></td>																						
     </tr>	
     <tr>
-    	<td>Airport Name:</td>
+    	<th>Airport Name:</th>
     	<td><r:input path="airportname" /></td>																						
     </tr>	
     <tr>
-    	<td>Amount:</td>
+    	<th>Amount:</th>
     	<td><r:input path="amount"  /></td>																						
     </tr>																																																									
   	<tr>
@@ -64,11 +75,7 @@
   	</tr>
   	</table> 
   </r:form>
-  <!-- <script>
-	function myFunctionAdd(){
-		window.location.href = ("admin");
-	}
-</script> -->
+  </CENTER>
 <%@ include file="footer.jsp" %>
 </body>
 </html>

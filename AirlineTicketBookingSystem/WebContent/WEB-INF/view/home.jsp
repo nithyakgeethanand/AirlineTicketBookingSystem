@@ -32,8 +32,9 @@ th {
 	padding-left: 20px;
 }
 #submitbutton {
-	margin-left: 300px;
+	margin-left: 50px;
 	margin-top: 40px;
+	margin-bottom: 30px;
 }
 
 
@@ -43,13 +44,12 @@ th {
 <%@ include file="header.jsp" %>
 
 
-<h1>Welcome To Airline Reservation</h1>
-<%-- <img src="/resources/images/header.jpg" alt="flight" style="width:400px;height:400px">
-<img src='<c:url value="/images/header.jpg"></c:url>' />  --%>
-<h6>Please enter the details for Booking</h6>
+<CENTER><h1 style="color: white; padding-bottom: 20px; padding-top: 20px;">Welcome To Airline Reservation</h1></CENTER>
+
+<CENTER><h6 style="color: white; padding-left: 50px; padding-bottom: 20px;">Please enter the details for Booking</h6></CENTER>
 
 <f:form action="flights" modelAttribute="flightinfoattribute">
-<table style="width:80%">
+<CENTER><table style="width:50%; border: 2px solid grey; z-index: 2;" >
   <tr>
     <th>Source:</th>
     <td><f:select style="width:200px; height:35px;" path="f_source" required="required" >
@@ -87,14 +87,12 @@ th {
   <tr>
     <th>Date:</th>
     <td><f:input style="width:200px; height:35px;" value="mm/dd/yyyy" path="date" id="datepicker" required="required"/></td>
-    
-  </tr>
-</table>
-<tr>
+     </tr>
+  <tr>
   <td></td>
   <td><input id="submitbutton" type="submit" value="Find Flights"></td>
   </tr>
-		
+	</table></CENTER>	
 	</f:form>
 	<%@ include file="footer.jsp" %>
 </body>

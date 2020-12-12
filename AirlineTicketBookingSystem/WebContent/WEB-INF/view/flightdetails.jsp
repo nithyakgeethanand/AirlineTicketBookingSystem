@@ -5,6 +5,9 @@
 
 <html>
 <style>
+table { 
+ 	border-collapse: collapse;
+}
 td {
 	padding-top: 10px;
 	padding-bottom: 10px;
@@ -20,8 +23,8 @@ th {
 </head>
 <body>
 <%@ include file="header.jsp" %>
-<h3>List of Flights are as follows.</h3>   
-<table>
+<CENTER><h3 style="color: white; padding-bottom: 20px; padding-top: 20px;">List of Flights are as follows:</h3>   
+<table style="width:90%; border: 2px solid grey; z-index: 2;">
 
 <tr>
 	
@@ -33,6 +36,7 @@ th {
     <th>Time</th>
     <th>Airport Name</th>
     <th>Ticket Rate</th> 
+    <th></th>
   </tr>
 <c:forEach items="${flightlist}" var="flight">
     <tr>
@@ -44,19 +48,19 @@ th {
         <td><c:out value="${flight.f_time}"/></td>
         <td><c:out value="${flight.airportname}"/></td>
         <td><c:out value="${flight.amount}"/></td>
-        <td><a href="/AirlineTicketBookingSystem/bookdetails?flight=${flight.f_no}&&bookdate=${flight.date}" >Book</a></td>
+        <td><a href="/AirlineTicketBookingSystem/bookdetails?flight=${flight.f_no}&&bookdate=${flight.date}" style="border: 1px; background: #3399ff; padding: 5px 10px; border-radius: 4px;">Book</a></td>
        
     </tr>
 </c:forEach>
-</table>
+</table></CENTER>
 
-<script>
+<!-- <script>
 function saveSelected(radio){
 	if(document.getElementById(radio).checked){
 		document.getElementById("dynamicName").value = radio.value;
 	}
 }
-</script>	
+</script>	 -->
 	<!-- <script>
 	function myFunction(){
 		var f_no;

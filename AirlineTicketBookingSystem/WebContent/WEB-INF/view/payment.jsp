@@ -21,7 +21,7 @@ th {
 
 </head>
 <body>
-<h3>Payment </h3>
+<CENTER><h3 style="color: white; padding-bottom: 20px; padding-top: 20px;">Payment </h3>
 <ff:form action="paymentsuccess" modelAttribute="paymentattribute">
 	
 	<table style="width:80%">
@@ -75,7 +75,7 @@ th {
   	<td></td>
   	<td><input type="submit" value="Payment & Book"></td>
   	</tr>
-  	</table> 
+  	</table> </CENTER>
   </ff:form>
   <%@ include file="footer.jsp" %>
 </body>

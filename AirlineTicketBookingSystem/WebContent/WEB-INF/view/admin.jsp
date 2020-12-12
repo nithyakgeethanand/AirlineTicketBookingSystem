@@ -17,13 +17,13 @@ td {
 <%@ include file="title.jsp" %>
 <%@ include file="header.jsp" %>
 
-<h3>List of flight details </h3>
+
 <meta charset="ISO-8859-1">
 
 </head>
 <body>
-
-<table>
+<CENTER><h3 style="color: white; padding-bottom: 20px; padding-top: 20px;">List of Flight details </h3></CENTER>
+<CENTER><table style="width:80%; border: 2px solid grey; z-index: 2;">
 
 <tr>
 	
@@ -35,6 +35,9 @@ td {
     <th>Time</th>
     <th>Airport Name</th>
     <th>Ticket Rate</th> 
+    <th></th>
+    <th></th>
+    <th></th>
   </tr>
 <a:forEach items="${flightlist}" var="flight">
     <tr>
@@ -47,15 +50,30 @@ td {
         <td><a:out value="${flight.f_time}"/></td>
         <td><a:out value="${flight.airportname}"/></td>
         <td><a:out value="${flight.amount}"/></td>
-        <td><a href="/AirlineTicketBookingSystem/flightdelete?flight=${flight.f_no}&&bookdate=${flight.date}" style="border: 1px; background: black; padding: 5px 10px; border-radius: 4px;">Delete</a></td>
-        <td><a href="/AirlineTicketBookingSystem/flightupdate?flight=${flight.f_no}&&bookdate=${flight.date}" style="border: 1px; background: black; padding: 5px 10px; border-radius: 4px;">Update</a></td>
-        <td><a href="/AirlineTicketBookingSystem/flightchart?flight=${flight.f_no}&&bookdate=${flight.date}" >Chart</a></td>
+        <td><a href="/AirlineTicketBookingSystem/flightdelete?flight=${flight.f_no}&&bookdate=${flight.date}" style="border: 1px; background: #3399ff; padding: 5px 10px; border-radius: 4px;">Delete</a></td>
+        <td><a href="/AirlineTicketBookingSystem/flightupdate?flight=${flight.f_no}&&bookdate=${flight.date}" style="border: 1px; background: #3399ff; padding: 5px 10px; border-radius: 4px;">Update</a></td>
+        <td><a href="/AirlineTicketBookingSystem/flightchart?flight=${flight.f_no}&&bookdate=${flight.date}" style="border: 1px; background: #3399ff; padding: 5px 10px; border-radius: 4px;">Chart</a></td>
       
     </tr>
 </a:forEach>
 
-</table>
-<CENTER><a href="#" onclick="myFunctionAdd()" style="border: 1px; background: black; padding: 5px 10px; border-radius: 4px;">Add</a></CENTER>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+<a href="#" onclick="myFunctionAdd()" style="border: 1px; background: #3399ff; padding: 5px 10px; border-radius: 4px;">Add</a>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+</table></CENTER>
 
 	<script>
 	function myFunctionAdd(){
