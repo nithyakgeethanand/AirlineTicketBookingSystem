@@ -39,7 +39,7 @@ public class HomeController {
 	}
 	
 	@RequestMapping("contactus")
-	public String contactusform() {
+	public String contactusForm() {
 		return "contactus";
 	}
 	
