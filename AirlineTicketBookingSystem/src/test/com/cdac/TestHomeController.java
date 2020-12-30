@@ -1,7 +1,10 @@
 package test.com.cdac;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.runners.MockitoJUnitRunner;
 import org.springframework.ui.ModelMap;
 
 import com.cdac.FlightInfo;
@@ -16,13 +19,16 @@ import org.junit.Before;
 
 import static org.mockito.Mockito.*;
 
+@RunWith(MockitoJUnitRunner.class)
 public class TestHomeController {
 	@Mock
 	FlightInfoModel fm;
 	
+	@InjectMocks
+	HomeController homeController;
+	
 	@Test
 	public void testShowHome() {
-		HomeController homeController = new HomeController();
 		FlightInfo flightInfo = new FlightInfo();
 		ModelMap modelMap = new ModelMap();
 		Assert.assertEquals("home", homeController.showHome(flightInfo, modelMap));
@@ -30,40 +36,35 @@ public class TestHomeController {
 	
 	@Test
 	public void testContactusForm() {
-		HomeController homeController = new HomeController();
 		String actualResult = homeController.contactusForm();
 		Assert.assertEquals("contactus", actualResult);
 	}
 	
 	@Test
 	public void testflightDetails() {
-		
-		HomeController homeController = new HomeController();
 		FlightInfo flightInfo = new FlightInfo();
 		flightInfo.setF_source("trivandrum"); 
 		flightInfo.setF_destination("mumbai");
 		flightInfo.setDate("10/11/2020");
 		
 		ModelMap modelMap = new ModelMap();
-		List<FlightInfo> list = new ArrayList();
+		List<FlightInfo> list = new ArrayList<FlightInfo>();
 		list.add(flightInfo);
 		
-		doReturn(list).when(fm).getFlights(any(FlightInfo.class));
-		
+		doReturn(list).when(fm).getFlights(any());
+
 		String actualResult = homeController.flightDetails(flightInfo, modelMap);
 		Assert.assertEquals("flightdetails", actualResult);
 	}
 	
 	 @Test 
 	 public void testflightDetailsWithSorryPage() {
-		 
-		 HomeController homeController = new HomeController(); 
 		 FlightInfo flightInfo = new FlightInfo();
 		 ModelMap modelMap = new ModelMap();
-		 List<FlightInfo> list = new ArrayList();
+		 List<FlightInfo> list = new ArrayList<FlightInfo>();
 		  
 		 when(fm.getFlights(any(FlightInfo.class))).thenReturn(list);
-			
+		 
 		 String actualResult = homeController.flightDetails(flightInfo, modelMap);
 		 Assert.assertEquals("sorry", actualResult); 
 	}
