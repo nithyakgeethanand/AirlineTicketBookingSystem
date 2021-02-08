@@ -107,5 +107,37 @@ public class TestHomeController {
 		 
 		 String actualResult = homeController.adminAddValues(flightinfo);
 		 Assert.assertEquals("adminadddetails", actualResult);
-	 }	
+	 }
+	 
+//	 @Test
+//	 public void testNavigateLoginForm() {
+//		 ModelMap modelMap = new ModelMap();
+//		 Model m = new ExtendedModelMap();
+		 
+//		 String actualResult = homeController.navigateloginform(flight, bookdate, model, m);
+//		 Assert.assertEquals("login", actualResult);
+//	 }
+	 
+	 @Test
+	 public void testLoginFormWithNoUserFound() {
+		 Login login =new Login();
+		 FlightInfo flightinfo = new FlightInfo();
+		 ModelMap modelmap = new ModelMap();
+		 
+		 String actualResult = homeController.loginform(login, flightinfo, modelmap);
+		 Assert.assertEquals("nouserfound", actualResult);
+	 }
+	 
+	 @Test
+	 public void testLoginFormWithExistingUser() {
+		 Login login = new Login();
+		 login.setUsername("anu");
+		 FlightInfo flightinfo = new FlightInfo();
+		 ModelMap modelMap = new ModelMap();
+		 
+		 when(lm.login(login)).thenReturn(true);
+		 
+		 String actualResult = homeController.loginform(login, flightinfo, modelMap);
+		 Assert.assertEquals("bookdetails", actualResult);
+	 }
 }
